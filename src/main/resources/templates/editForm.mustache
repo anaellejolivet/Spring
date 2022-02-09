@@ -1,0 +1,28 @@
+{{>header}}
+
+<body onload="document.getElementById('pays_select').value='{{city.country.name}}'">
+	<h1>Modifier la ville</h1>
+	<form  name="editVille" method="POST" action="save">
+        
+		<label for="nom">Nom</label>
+		<input type="text" name="nom" required="required" {{#city}} value="{{city.name}}" {{/city}}
+        />
+		<label for="pays">Pays</label>
+		<select name="pays" id="pays_select" required="required">
+			{{#country}}
+			<option>{{name}}</option>
+			{{/country}}
+		</select>
+		<label for="population">Population</label>
+		<input 
+         type="number" name="population" required="required" 
+         {{#city}} value="{{city.population}}" {{/city}}
+         />
+		<input type="submit" value="Enregistrer">
+        <input type="hidden" name="id" {{#city}} value="{{city.id}}" {{/city}}/>
+        
+	</form>
+
+</body>
+
+</html>

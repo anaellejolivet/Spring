@@ -1,0 +1,8 @@
+monprojet/dao/CityRepository.class
+monprojet/entity/Country.class
+monprojet/controller/CityController.class
+monprojet/entity/City.class
+monprojet/dao/CountryRepository.class
+monprojet/dto/PopulationResult.class
+monprojet/WebApp.class
+monprojet/ConsoleApp.class

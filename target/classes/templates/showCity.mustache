@@ -1,0 +1,46 @@
+{{>header}}
+
+<body>
+	<h1>Ajouter une nouvelle ville</h1>
+
+	<form name="addVille" method="POST" action="show">
+		<label for="nom">Nom</label>
+		<input type="text" name="nom" required="required" !size="20" />
+		<label for="pays">Pays</label>
+		<select name="pays" id="pays_select" required="required">
+			{{#country}}
+			<option value="{{name}}">{{name}}</option>
+			{{/country}}
+		</select>
+		<label for="population">Population</label>
+		<input type="number" name="population" required="required" />
+
+		<input type="submit" value="Enregistrer">
+	</form>
+
+	<h1>Liste des villes</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Population</th>
+			<th>Country</th>
+			<th>Action</th>
+		</tr>
+		{{! Pour chaque city c dans la liste 'city' transmise par le contrôleur }}
+		{{#city}}
+		<tr>
+			{{! On affiche les informations de la catégorie }}
+			<td>{{name}}</td>
+			<td>{{population}}</td>
+			<td>{{country.name}}</td>
+			<td>
+				<a href='edit?code={{id}}'>Modifier</a>
+				<a href='delete?code={{id}}'>Supprimer</a>
+			</td>
+		</tr>
+		{{/city}}
+	</table>
+
+</body>
+
+</html>
